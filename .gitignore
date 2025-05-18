@@ -1,0 +1,27 @@
+# Entorno virtual
+venv/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Variables de entorno sensibles
+.env
+*.env
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos locales y personales
+iniciar.bat
+iniciar_simple.bat
+
+# Logs, base de datos y otros
+*.log
+*.sqlite3
+*.db
+
+# Configuración de Visual Studio Code
+.vscode/
