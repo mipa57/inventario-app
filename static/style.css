@@ -7,53 +7,62 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.container {
+  }
+  
+  .container {
     max-width: 700px;
     width: 100%;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     padding: 30px;
-}
-
-h2 {
+  }
+  
+  h2 {
     text-align: center;
     font-weight: bold;
     margin-bottom: 30px;
-}
-
-.form-section {
+  }
+  
+  .form-section {
     margin-bottom: 40px;
     padding: 20px;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     background-color: #f9f9f9;
-}
-
-.form-section h4 {
+  }
+  
+  .form-section h4 {
     font-weight: bold;
     margin-bottom: 15px;
     text-align: center;
-}
-
-input.form-control {
+  }
+  
+  input.form-control {
     margin-bottom: 10px;
     text-align: center;
-}
-
-.btn {
+  }
+  
+  .btn {
     min-width: 120px;
     font-weight: bold;
-}
-
-.btn-ver {
+  }
+  
+  .btn-ver {
     margin-top: 30px;
-}
-
-.alert {
+  }
+  
+  .alert {
     text-align: center;
     margin-top: 10px;
     font-size: 1rem;
-}
+  }
+  
+  .alert {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 1rem;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  
