@@ -1,116 +1,140 @@
-# Sistema de Inventario Web con Flask y MySQL
+# 🧾 Sistema de Inventario con Flask + MySQL
 
-Este proyecto es una aplicación web de inventario creada con **Flask**, **MySQL** y **Bootstrap**. Permite agregar, actualizar, eliminar productos y visualizar el inventario completo.
+Este proyecto es una aplicación web sencilla para gestionar inventario (agregar, actualizar, eliminar y ver productos), desarrollada con **Flask** y conectada a **MySQL**. 
 
----
-
-## 🌐 Demo en Producción (Frontend Estático)
-
-Puedes ver la versión estática del frontend en:
-
-➡ [https://inventariofrontend.netlify.app](https://inventariofrontend.netlify.app)
+Incluye un diseño visual con **Bootstrap** y alertas dinámicas. Se puede ejecutar localmente con facilidad.
 
 ---
 
-## 📄 Requisitos
+## 🚀 Requisitos para ejecutar la app
 
-* Python 3.10 o superior
-* MySQL Server (activo y funcionando)
-* Git (opcional, para clonar el repo)
+### 🔧 Programas necesarios:
+
+- Python 3.10 o superior
+- MySQL Server (ej: XAMPP, WAMP, Workbench, etc.)
+- Git (opcional, pero recomendado)
+- Navegador (Chrome, Edge, Firefox...)
 
 ---
 
-## 📝 Instalación Local
+## 📥 Instalación paso a paso
 
-### 1. Clona el repositorio
+### 1. Clona o descarga el repositorio:
 
-```bash
+```
 git clone https://github.com/mipa57/inventario-app.git
 cd inventario-app
 ```
 
-### 2. Crea y activa un entorno virtual
+O descarga el ZIP y descomprímelo.
 
-```bash
-python -m venv venv
-venv\Scripts\activate  # En Windows
+### 2. Configura la base de datos
+
+- Abre MySQL Workbench o tu cliente favorito.
+- Ejecuta el archivo `inventario.sql` para crear la base de datos y tabla.
+
+---
+
+### 3. Configura las variables de entorno
+
+Edita el archivo `.env` y coloca la contraseña de tu MySQL:
+
+```
+MYSQL_PASSWORD=TuContraseñaDeMySQL
 ```
 
-### 3. Instala las dependencias
+---
+
+### 4. Activa el entorno virtual
+
+En PowerShell (desde la carpeta del proyecto):
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+> Si da error, ejecuta esto una vez como administrador:
+>
+> ```powershell
+> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+> ```
+
+---
+
+### 5. Instala las dependencias:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Crea la base de datos en MySQL
+---
 
-Desde tu consola de MySQL ejecuta:
+## ▶️ Ejecutar la aplicación
 
-```sql
-SOURCE inventario.sql;
-```
-
-### 5. Configura el archivo `.env`
-
-Crea un archivo `.env` con tu contraseña de MySQL:
-
-```
-MYSQL_PASSWORD=tu_contraseña_aqui
-```
-
-### 6. Inicia la aplicación
-
-Puedes usar:
+### Opción 1: Manual
 
 ```bash
 python app.py
 ```
 
-O si prefieres, ejecuta `iniciar.bat` o `iniciar_simple.bat`.
+Y abre tu navegador en:
 
-Abre tu navegador en [http://localhost:5000](http://localhost:5000)
-
----
-
-## 🔄 Características
-
-* Agregar productos (con código, nombre, cantidad)
-* Actualizar datos de productos existentes
-* Eliminar productos
-* Ver el inventario completo (tabla)
-* Alertas visuales para éxito, advertencia o error
-* Validaciones simples (productos duplicados)
-* Interfaz estilizada con Bootstrap 5
+```
+http://127.0.0.1:5000
+```
 
 ---
 
-## 📅 Estructura del Proyecto
+### Opción 2: Usar archivo `iniciar.bat`
+
+Haz doble clic sobre `iniciar.bat`. Este archivo:
+
+- Activa el entorno virtual
+- Abre Visual Studio Code (si está instalado)
+- Abre una terminal con la app corriendo
+
+---
+
+## ✨ Funcionalidades
+
+- ✅ Agregar productos (con código único)
+- 🔄 Actualizar productos existentes (nombre y cantidad)
+- 🗑️ Eliminar productos por código
+- 📋 Ver todo el inventario
+- ⚠️ Alertas visuales para éxito, error y duplicados
+- 🎨 Estilo moderno con Bootstrap y gradientes
+
+---
+
+## 📦 Estructura del Proyecto
 
 ```
 inventario-app/
-├── app.py                 # Lógica principal de la aplicación
-├── templates/             # Vistas HTML (index.html, inventario.html)
-├── static/css/style.css   # Estilos personalizados
-├── .env                   # Contraseña de MySQL (ignorado por Git)
-├── .gitignore             # Archivos ignorados
-├── requirements.txt       # Dependencias del proyecto
-├── README.md              # Este archivo
-├── inventario.sql         # Script para crear la base de datos y tabla
-├── iniciar.bat            # Script para lanzar el servidor y VS Code
-├── iniciar_simple.bat     # Alternativa sin abrir VS Code
-├── pruebas.py             # Verifica conexión MySQL
+├── app.py                  # App principal Flask
+├── iniciar.bat            # Script para lanzar la app
+├── iniciar_simple.bat     # Alternativa rápida sin abrir VSCode
+├── requirements.txt       # Librerías necesarias
+├── .env                   # Variables de entorno
+├── inventario.sql         # Script de base de datos
+├── templates/             # HTML con Jinja2
+│   ├── index.html
+│   └── inventario.html
+├── static/css/style.css   # Estilos visuales
+└── venv/                  # Entorno virtual (no se sube a GitHub)
 ```
 
 ---
 
-## 🎓 Autor
+## 📌 Créditos
 
-**Miguel Gustavo Bejarano Patiño**
-[Portafolio](https://portafolio-desarrollador.netlify.app)
-[GitHub](https://github.com/mipa57)
+- Desarrollado por **Miguel Bejarano**
+- Proyecto educativo con Flask y MySQL
 
 ---
 
-## 🎉 Licencia
+¿Problemas al ejecutar? Verifica:
+- Que MySQL esté encendido
+- Que el archivo `.env` tenga la contraseña correcta
+- Que activaste el entorno virtual
 
-Este proyecto es de libre uso educativo. Puedes adaptarlo, mejorarlo y compartirlo bajo tu propio repositorio. ¡Se agradecen estrellas! ✨
+¡Gracias por usar el sistema! 🎉
